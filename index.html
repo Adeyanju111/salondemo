@@ -337,98 +337,6 @@
             color: #b45f4b;
         }
 
-        /* MODAL STYLES */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.65);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(4px);
-        }
-        .modal-content {
-            background: white;
-            border-radius: 32px;
-            max-width: 550px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 32px 30px;
-            position: relative;
-            animation: fadeSlide 0.25s ease;
-        }
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(-20px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .modal-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 24px;
-            color: #32241f;
-        }
-        .close-modal {
-            position: absolute;
-            right: 28px;
-            top: 24px;
-            font-size: 28px;
-            cursor: pointer;
-            color: #a18272;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #3b2a24;
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 28px;
-            border: 1px solid #e2cfc2;
-            background: #fefaf8;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #b45f4b;
-            box-shadow: 0 0 0 3px rgba(180,95,75,0.2);
-        }
-        .book-submit {
-            width: 100%;
-            margin-top: 16px;
-            background: #b45f4b;
-            font-weight: 700;
-        }
-        .toast-msg {
-            visibility: hidden;
-            min-width: 260px;
-            background-color: #2e5c3e;
-            color: #fff;
-            text-align: center;
-            border-radius: 40px;
-            padding: 12px 22px;
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1100;
-            font-weight: 500;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .toast-msg.show {
-            visibility: visible;
-            opacity: 1;
-        }
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2.4rem; }
             .navbar { flex-direction: column; }
@@ -452,7 +360,7 @@
                 <a href="#about">About</a>
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
-                <a href="#" class="btn-booking-nav open-booking-btn" id="navBookingBtn">Book Now</a>
+                <a href="https://script.google.com/macros/s/AKfycbzUB2vdyB1BngqooX6twHn-iDqRQsHUgfGqPxnfQaydGkRvhvMFAksFP159hO3MgeEn/exec" class="btn-booking-nav" target="_blank" rel="noopener noreferrer">Book Now</a>
             </div>
         </div>
     </div>
@@ -465,7 +373,7 @@
             <div class="hero-content">
                 <h1>Where beauty meets <br>elegance & grace</h1>
                 <p>Experience luxury hair, makeup, nails and spa services. Our artists bring your dream look to life.</p>
-                <button class="btn-primary open-booking-btn" id="heroBookingBtn"><i class="fas fa-calendar-check"></i> Book Appointment</button>
+                <a href="https://script.google.com/macros/s/AKfycbzUB2vdyB1BngqooX6twHn-iDqRQsHUgfGqPxnfQaydGkRvhvMFAksFP159hO3MgeEn/exec" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fas fa-calendar-check"></i> Book Appointment</a>
             </div>
             <div class="hero-img" aria-label="salon interior with stylist"></div>
         </div>
@@ -485,7 +393,7 @@
                 <div class="service-card"><i class="fas fa-spa"></i><h3>Massage Therapy</h3><p>Swedish, deep tissue, hot stone</p><div class="price">from $90</div></div>
             </div>
             <div style="text-align: center; margin-top: 48px;">
-                <button class="btn-primary open-booking-btn"><i class="fas fa-book-open"></i> Reserve Your Service</button>
+                <a href="https://script.google.com/macros/s/AKfycbzUB2vdyB1BngqooX6twHn-iDqRQsHUgfGqPxnfQaydGkRvhvMFAksFP159hO3MgeEn/exec" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-open"></i> Reserve Your Service</a>
             </div>
         </div>
     </section>
@@ -554,147 +462,8 @@
     </div>
 </footer>
 
-<!-- Booking Modal -->
-<div id="bookingModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal" id="closeModalBtn">&times;</span>
-        <h2><i class="fas fa-calendar-alt"></i> Book your appointment</h2>
-        <form id="bookingForm">
-            <div class="form-group">
-                <label>Full name *</label>
-                <input type="text" id="fullName" required placeholder="e.g. Sarah Johnson">
-            </div>
-            <div class="form-group">
-                <label>Email *</label>
-                <input type="email" id="email" required placeholder="hello@example.com">
-            </div>
-            <div class="form-group">
-                <label>Phone *</label>
-                <input type="tel" id="phone" required placeholder="(123) 456-7890">
-            </div>
-            <div class="form-group">
-                <label>Service *</label>
-                <select id="serviceSelect" required>
-                    <option value="">-- Choose a service --</option>
-                    <option>Hair Styling ($45)</option><option>Hair Color ($80)</option><option>Makeup Artistry ($60)</option>
-                    <option>Manicure/Pedicure ($35)</option><option>Facial ($70)</option><option>Massage Therapy ($90)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Preferred Date *</label>
-                <input type="date" id="datePick" required>
-            </div>
-            <div class="form-group">
-                <label>Preferred Time *</label>
-                <select id="timeSlot" required>
-                    <option value="">-- Select time --</option>
-                    <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option>
-                    <option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Special requests (optional)</label>
-                <textarea rows="2" placeholder="Any allergies or notes..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary book-submit"><i class="fas fa-check-circle"></i> Confirm Booking</button>
-        </form>
-        <p style="font-size: 0.75rem; margin-top: 16px; text-align:center;">We’ll confirm within 2 hours. No credit card required.</p>
-    </div>
-</div>
-
-<div id="toastMsg" class="toast-msg">✨ Appointment request sent! We'll contact you soon.</div>
-
 <script>
-    // DOM Elements
-    const modal = document.getElementById('bookingModal');
-    const openBtns = document.querySelectorAll('.open-booking-btn');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const bookingForm = document.getElementById('bookingForm');
-    const toast = document.getElementById('toastMsg');
-
-    // Set min date to today for date picker
-    const today = new Date().toISOString().split('T')[0];
-    const dateInput = document.getElementById('datePick');
-    if(dateInput) dateInput.setAttribute('min', today);
-
-    // Open Modal functions
-    function openModal() {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-    function closeModalFunc() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    openBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal();
-        });
-    });
-
-    if(closeBtn) closeBtn.addEventListener('click', closeModalFunc);
-    window.addEventListener('click', (e) => {
-        if(e.target === modal) closeModalFunc();
-    });
-    document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape' && modal.style.display === 'flex') closeModalFunc();
-    });
-
-    // Show toast helper
-    function showToast(message) {
-        toast.textContent = message || "✨ Appointment request sent! We'll contact you soon.";
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3500);
-    }
-
-    // Booking form submission
-    bookingForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get values
-        const fullName = document.getElementById('fullName').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const service = document.getElementById('serviceSelect').value;
-        const date = document.getElementById('datePick').value;
-        const time = document.getElementById('timeSlot').value;
-
-        if(!fullName || !email || !phone || !service || !date || !time) {
-            alert('Please fill all required fields (*)');
-            return;
-        }
-        // Email simple validation
-        const emailPattern = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/;
-        if(!emailPattern.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-        if(phone.length < 7) {
-            alert('Please enter a valid phone number.');
-            return;
-        }
-        
-        // simulate booking success
-        console.log(`Booking request: ${fullName}, ${email}, ${service}, ${date} at ${time}`);
-        
-        // Reset form
-        bookingForm.reset();
-        // close modal
-        closeModalFunc();
-        // show confirmation toast
-        showToast(`✅ Thank you ${fullName.split(' ')[0]}! Your ${service} booking is pending confirmation.`);
-        
-        // optional: could send data to a real endpoint, but for demo it's perfect
-        // reset date min after reset?
-        if(dateInput) dateInput.setAttribute('min', today);
-    });
-
-    // close modal if click outside prevention already handled
-    // Additional: smooth anchor link offset for fixed header
+    // smooth anchor link offset for fixed header
     document.querySelectorAll('.nav-links a[href^="#"], footer a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
