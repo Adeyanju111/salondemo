@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <meta name="description" content="Glam & Grace Salon offers premium hair styling, makeup artistry, nail care, and spa treatments. Book your appointment online for a rejuvenating beauty experience.">
+    <meta name="keywords" content="salon, hair salon, beauty salon, makeup, nails, spa, facial, massage, hair styling, booking">
+    <meta name="author" content="Glam & Grace Salon">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Glam & Grace Salon – Premium Hair & Beauty Salon">
+    <meta property="og:description" content="Experience luxury beauty services in a relaxing atmosphere. Book your appointment with our expert stylists and therapists.">
+    <meta property="og:image" content="i (1).jfif">
+    <meta property="og:url" content="https://www.glamandgracesalon.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Glam & Grace Salon – Book Your Beauty Appointment">
+    <meta name="twitter:description" content="Premium salon services from expert stylists. Online booking available.">
+    <link rel="canonical" href="https://www.glamandgracesalon.com">
+    <title>Glam & Grace Salon | Hair, Makeup, Nails & Spa – Book Online</title>
+    
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fffcf9;
+            color: #2d2a27;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, .logo, .nav-links a, .hero-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #ffffffea;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #f0e3db;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #b45f4b;
+        }
+        .logo span {
+            color: #d4a373;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #3e2e28;
+            transition: 0.25s ease;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            /* Ensure tap targets are large enough on mobile */
+            padding: 8px 0;
+            display: inline-block;
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+            color: #b45f4b;
+        }
+
+        .btn-booking-nav {
+            background: #b45f4b;
+            color: white !important;
+            padding: 10px 22px !important;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .btn-booking-nav:hover {
+            background: #9c4a38;
+            transform: translateY(-2px);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background: #b45f4b;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            /* Ensure tap target is large */
+            min-width: 200px;
+        }
+        .btn-primary:hover {
+            background: #9a4735;
+            transform: translateY(-2px);
+        }
+        /* Mobile tap feedback */
+        .btn-primary:active, .btn-booking-nav:active {
+            transform: scale(0.97);
+            transition: 0.05s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(100deg, #fcf3ed 0%, #fff6f0 100%);
+            padding: 70px 0 80px;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            justify-content: space-between;
+        }
+        .hero-content {
+            flex: 1 1 45%;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #32241f;
+            margin-bottom: 18px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #5f4c42;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .hero-img {
+            flex: 1 1 45%;
+            background: url('i (1).jfif') no-repeat center center/cover;
+            border-radius: 36px;
+            min-height: 380px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+        }
+
+        /* Section styling */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #36241e;
+        }
+        .section-sub {
+            text-align: center;
+            color: #7c6256;
+            max-width: 650px;
+            margin: 0 auto 48px;
+        }
+
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            border: 1px solid #f6eae3;
+        }
+        .service-card i {
+            font-size: 3rem;
+            color: #b45f4b;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #6b554a;
+            margin-bottom: 18px;
+        }
+        .price {
+            font-weight: 700;
+            color: #b45f4b;
+            font-size: 1.2rem;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #e7cfc2;
+            box-shadow: 0 18px 30px -12px rgba(0,0,0,0.1);
+        }
+
+        /* About + Testimonials */
+        .about-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .about-stats {
+            display: flex;
+            gap: 36px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .stat h4 {
+            font-size: 1.8rem;
+            color: #b45f4b;
+        }
+        .testimonials {
+            background: #fef7f2;
+            border-radius: 48px;
+            padding: 60px 32px;
+        }
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+            gap: 32px;
+        }
+        .testi-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+        }
+        .testi-card i {
+            color: #d9b08c;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .testi-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .gallery-item {
+            border-radius: 28px;
+            overflow: hidden;
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f1a17;
+            color: #e2cfc2;
+            padding: 56px 0 30px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            color: #f0dbcf;
+        }
+        .social-links a {
+            color: #e6cbbc;
+            font-size: 1.4rem;
+            margin-right: 18px;
+            transition: 0.2s;
+            display: inline-block;
+            padding: 8px;
+        }
+        .social-links a:hover {
+            color: #b45f4b;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.4rem; }
+            .navbar { flex-direction: column; }
+            .nav-links { justify-content: center; gap: 20px; margin-top: 8px; }
+            .section-title { font-size: 2rem; }
+            .btn-primary { padding: 12px 24px; min-width: 180px; width: 100%; max-width: 280px; margin: 0 auto; display: block; }
+            .hero-content .btn-primary { margin: 0 auto; }
+            .hero-content { text-align: center; }
+            .hero-content p { margin-left: auto; margin-right: auto; }
+            .about-stats { justify-content: center; text-align: center; }
+            .stat h4 { font-size: 1.5rem; }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Ensure no invisible overlay blocks clicks */
+        .hero-img, .gallery-item {
+            pointer-events: none; /* allows clicking through decorative images if needed, but buttons are separate */
+        }
+        .btn-primary, .btn-booking-nav {
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">Glam & <span>Grace</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+                <a href="https://script.google.com/macros/s/AKfycbxcHjcQnxbSHRr-sng8Z3EkvYXnuTm_G6w1vABvbL3ca-0QkYHKBkTDmUOb8A4tM_ya/exec" class="btn-booking-nav" target="_blank" rel="noopener noreferrer">Book Now</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Where beauty meets <br>elegance & grace</h1>
+                <p>Experience luxury hair, makeup, nails and spa services. Our artists bring your dream look to life.</p>
+                <a href="https://script.google.com/macros/s/AKfycbxcHjcQnxbSHRr-sng8Z3EkvYXnuTm_G6w1vABvbL3ca-0QkYHKBkTDmUOb8A4tM_ya/exec" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+            </div>
+            <div class="hero-img" aria-label="Salon hair styling session"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Signature Services</h2>
+            <p class="section-sub">Premium treatments tailored to elevate your natural beauty</p>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-cut"></i><h3>Hair Styling</h3><p>Blowouts, updos, precision cuts</p><div class="price">from $45</div></div>
+                <div class="service-card"><i class="fas fa-palette"></i><h3>Hair Color</h3><p>Balayage, highlights, vivid color</p><div class="price">from $80</div></div>
+                <div class="service-card"><i class="fas fa-brush"></i><h3>Makeup Artistry</h3><p>Bridal, editorial, everyday glam</p><div class="price">from $60</div></div>
+                <div class="service-card"><i class="fas fa-hand-sparkles"></i><h3>Nail Care</h3><p>Manicure, pedicure, gel design</p><div class="price">from $35</div></div>
+                <div class="service-card"><i class="fas fa-face-smile"></i><h3>Facials & Skin</h3><p>Hydrating, anti-aging, glow therapy</p><div class="price">from $70</div></div>
+                <div class="service-card"><i class="fas fa-spa"></i><h3>Massage Therapy</h3><p>Swedish, deep tissue, hot stone</p><div class="price">from $90</div></div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="https://script.google.com/macros/s/AKfycbxcHjcQnxbSHRr-sng8Z3EkvYXnuTm_G6w1vABvbL3ca-0QkYHKBkTDmUOb8A4tM_ya/exec" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-open"></i> Reserve Your Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About + Stats -->
+    <section id="about">
+        <div class="container about-wrap">
+            <div class="about-text">
+                <h3>Your sanctuary of <br>beauty & relaxation</h3>
+                <p>Glam & Grace Salon has been serving the community for over 12 years, blending modern trends with timeless elegance. Our certified stylists and therapists use only premium, cruelty-free products. Every client receives personalized attention in a serene, boutique environment.</p>
+                <div class="about-stats">
+                    <div class="stat"><h4>12+</h4><p>Years of excellence</p></div>
+                    <div class="stat"><h4>15k+</h4><p>Happy clients</p></div>
+                    <div class="stat"><h4>24</h4><p>Expert artists</p></div>
+                </div>
+            </div>
+            <div class="about-text">
+                <img src="i (2).jfif" alt="Salon interior with styling stations" style="width:100%; border-radius: 32px; box-shadow: 0 15px 20px rgba(0,0,0,0.05);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <div class="container testimonials" style="margin: 30px auto;">
+        <h2 class="section-title">Client Love</h2>
+        <div class="testi-grid">
+            <div class="testi-card"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Absolutely amazing! My hair has never looked better, and the staff made me feel so welcomed. The booking process was seamless."</p><h4>- Emma R.</h4></div>
+            <div class="testi-card"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"The facial and massage left me glowing. Luxury experience without being pretentious. I'll definitely be back."</p><h4>- Michelle K.</h4></div>
+            <div class="testi-card"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Incredible nail art and the bridal makeup was flawless. They truly listen to what you want. Highly recommend!"</p><h4>- Sophia L.</h4></div>
+        </div>
+    </div>
+
+    <!-- Gallery Section with local images 3 to 6 -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Studio Moments</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('i (3).jfif');" aria-label="Salon haircut and styling"></div>
+                <div class="gallery-item" style="background-image: url('i (4).jfif');" aria-label="Makeup application session"></div>
+                <div class="gallery-item" style="background-image: url('i (5).jfif');" aria-label="Nail art design showcase"></div>
+                <div class="gallery-item" style="background-image: url('i (6).jfif');" aria-label="Relaxing spa treatment"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact info footer before footer -->
+    <section id="contact" style="padding: 40px 0 20px;">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Get in Touch</h2>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Avenue, Los Angeles, CA 90001</p>
+            <p><i class="fas fa-phone-alt"></i> (213) 555-9876 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> hello@glamandgracesalon.com</p>
+            <p>Open: Mon-Sat 9AM - 7PM | Sun 10AM - 5PM</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col"><h4>Glam & Grace Salon</h4><p>Redefining beauty rituals with artistry and care.</p></div>
+            <div class="footer-col"><h4>Quick Links</h4><a href="#services" style="color:#e2cfc2; display:block; margin-bottom:8px;">Services</a><a href="#about" style="color:#e2cfc2; display:block; margin-bottom:8px;">About Us</a><a href="#gallery" style="color:#e2cfc2; display:block;">Gallery</a></div>
+            <div class="footer-col"><h4>Follow Us</h4><div class="social-links"><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a></div></div>
+        </div>
+        <hr style="border-color:#3d2e27; margin: 20px 0;">
+        <p style="text-align: center; font-size:0.85rem;">© 2025 Glam & Grace Salon — All rights reserved. <br>Your beauty journey starts here.</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth anchor scrolling with offset for fixed header
+    document.querySelectorAll('.nav-links a[href^="#"], footer a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== "#" && targetId !== "#home") {
+                const targetElem = document.querySelector(targetId);
+                if (targetElem) {
+                    e.preventDefault();
+                    const offset = 90;
+                    const elementPosition = targetElem.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+                }
+            } else if (targetId === "#home") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+        });
+    });
+
+    // Additional safeguard: ensure all booking buttons open the link even if any JS error occurs
+    // Buttons already have href, so no extra handling needed. But we add a console log to confirm on mobile.
+    document.querySelectorAll('.btn-primary, .btn-booking-nav').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // No preventDefault - let the link work naturally
+            console.log('Booking button clicked, opening: ' + this.href);
+        });
+    });
+</script>
+
+<!-- Structured Data (JSON-LD) for Local Business & SEO -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Glam & Grace Salon",
+    "image": "i (1).jfif",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Fashion Avenue",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US"
+    },
+    "telephone": "+12135559876",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "17:00" }
+    ],
+    "url": "https://www.glamandgracesalon.com",
+    "sameAs": [
+        "https://www.instagram.com/glamandgracesalon",
+        "https://www.facebook.com/glamandgracesalon"
+    ]
+}
+</script>
+</body>
+</html>
